@@ -7,8 +7,8 @@ from functions.centerWindow import *
 
 
 DASHBOARD = Tk()
-DASHBOARD.title("Py.name.LME")
-DASHBOARD.geometry("640x600")
+DASHBOARD.title("Py.name.MISTIC_HAMMER")
+DASHBOARD.geometry("602x598")
 DASHBOARD.config(bg="gray")
 DASHBOARD.resizable(False, False)
 center_window(DASHBOARD)
