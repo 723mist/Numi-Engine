@@ -5,7 +5,6 @@ from pyconf import *
 import functions.centerWindow
 from functions.centerWindow import *
 
-
 DASHBOARD = Tk()
 DASHBOARD.title("Py.name.MISTIC_HAMMER")
 DASHBOARD.geometry("602x598")
@@ -20,9 +19,9 @@ def new():
         folder_name = f'mhle_{proj_name}'
         if not os.path.exists(folder_name):
             os.makedirs(folder_name)
-            file_path = os.path.join(folder_name, 'settings.hml')
+            file_path = os.path.join(folder_name, 'settings.spmh')
             with open(file_path, 'w', encoding='utf-8') as file:
-                file.write('DevTest')
+                file.write("Create with MISTIC_HAMMER")
             tk_msg.showinfo("Project created, now open engine", f"Project '{proj_name}' created successfully!", parent=DASHBOARD)
 
             import ENGINE

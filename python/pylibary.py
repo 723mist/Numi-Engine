@@ -7,3 +7,5 @@ import tkinter.simpledialog as tk_dial
 import tkinter.font as tk_font
 import tkinter.ttk as tkk
 import os
+from os import getenv
+from os import path
