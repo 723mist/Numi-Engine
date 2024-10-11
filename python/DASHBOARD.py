@@ -1,7 +1,5 @@
 import pylibary
 from pylibary import *
-import pyconf
-from pyconf import *
 import functions.centerWindow
 from functions.centerWindow import *
 
@@ -41,7 +39,7 @@ def update_folders():
 
 def new():
 
-    import ENGINE
+    import python.Engine.Engine as Engine
     DASHBOARD.destroy()
 
     proj_name = tk_dial.askstring('Enter your project name', 'Enter your project name:', parent=DASHBOARD)
