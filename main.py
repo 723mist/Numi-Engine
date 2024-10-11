@@ -5,6 +5,7 @@ import tkinter.simpledialog as tk_dial
 import tkinter.font as tk_font
 import tkinter.ttk as tkk
 import os
+import textwrap
 
 # создание окна
 root = tk.Tk()
@@ -60,13 +61,39 @@ def new_proj():
         folder_name = f'AntProj_{proj_name}'
 
         if not os.path.exists(folder_name):
-            os.makedirs(folder_name)
-            file_path = os.path.join(folder_name, 'main.txt')
-            with open(file_path, 'w', encoding='utf-8') as file:
-                file.write('Это мой файл в новой папке.')
-            tk_msg.showinfo("Project Created", f"Project '{proj_name}' created successfully!", parent=root)
+            proj_width = tk_dial.askinteger('Enter your project width', 'Enter your project width:', parent=root)
+            if proj_width:
+                proj_height = tk_dial.askinteger('Enter your project height', 'Enter your project height:', parent=root)
+                if proj_height:
+                    os.makedirs(folder_name)
+                    file_path = os.path.join(folder_name, 'main.py')
+                    code = textwrap.dedent(f"""
+                    import pygame
+                    import sys
+                    
+                    pygame.init()
+                    
+                    width = {proj_width}
+                    height = {proj_height}
+                    screen = pygame.display.set_mode((width, height))
+                    pygame.display.set_caption("{proj_name}")
+                    
+                    running = True
+                    while running:
+                        for event in pygame.event.get():
+                            if event.type == pygame.QUIT:
+                                running = False
+                    
+                        pygame.display.flip()
+                    
+                    pygame.quit()
+                    sys.exit()
+                    """)
+                    with open(file_path, 'w', encoding='utf-8') as file:
+                        file.write(f'{code}\n')
+                    tk_msg.showinfo("Project Created", f"Project '{proj_name}' created successfully!", parent=root)
 
-            update_folders()
+                    update_folders()
         else:
             tk_msg.showerror("ERROR", "A project with this name already exists!", parent=root)
 
