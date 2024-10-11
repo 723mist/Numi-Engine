@@ -9,6 +9,18 @@ import os
 # создание окна
 root = tk.Tk()
 
+# все папки, которые начинаются на "AntProj_"
+def update_folders():
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    folders = [folder for folder in os.listdir(current_directory) if os.path.isdir(os.path.join(current_directory, folder))]
+    filtered_folders = [folder for folder in folders if folder.startswith('AntProj_')]
+
+    listbox.delete(0, tk.END)
+
+    for folder in filtered_folders:
+        display_name = folder.replace('AntProj_', '', 1)
+        listbox.insert(tk.END, display_name)
+
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
@@ -53,11 +65,22 @@ def new_proj():
             with open(file_path, 'w', encoding='utf-8') as file:
                 file.write('Это мой файл в новой папке.')
             tk_msg.showinfo("Project Created", f"Project '{proj_name}' created successfully!", parent=root)
+
+            update_folders()
         else:
             tk_msg.showerror("ERROR", "A project with this name already exists!", parent=root)
 
 btn_new = tkk.Button(frame, text='New', style='TButton', command=new_proj)
 btn_new.place(x=125, y=150, anchor='center')
+
+# cписок папок
+folders_text = tk.Label(frame, text="Your Projects", font=tkfont, bg=color2)
+folders_text.place(relx=0.2, y=225, anchor='n')
+
+listbox = tk.Listbox(frame, width=25, height=10, font=('Arial', 16))
+listbox.place(relx=0.2, y=275, anchor='n')
+
+update_folders()
 
 # запуск программы
 root.mainloop()
