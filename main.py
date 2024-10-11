@@ -3,11 +3,25 @@ import tkinter as tk
 import tkinter.messagebox as tk_msg
 import tkinter.simpledialog as tk_dial
 import tkinter.font as tk_font
-import tkinter.ttk as tkk
+import tkinter.ttk as ttk
 import os
+import textwrap
+import subprocess
 
 # создание окна
 root = tk.Tk()
+
+# все папки, которые начинаются на "AntProj_"
+def update_folders():
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    folders = [folder for folder in os.listdir(current_directory) if os.path.isdir(os.path.join(current_directory, folder))]
+    filtered_folders = [folder for folder in folders if folder.startswith('AntProj_')]
+
+    listbox.delete(0, tk.END)
+
+    for folder in filtered_folders:
+        display_name = folder.replace('AntProj_', '', 1)
+        listbox.insert(tk.END, display_name)
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
@@ -34,7 +48,7 @@ path = 'Poppins/Poppins-Bold.ttf'
 tkfont = ('Arial', 24)
 
 # стили
-style = tkk.Style()
+style = ttk.Style()
 style.configure('TButton', font=tkfont)
 
 # текст
@@ -48,16 +62,108 @@ def new_proj():
         folder_name = f'AntProj_{proj_name}'
 
         if not os.path.exists(folder_name):
-            os.makedirs(folder_name)
-            file_path = os.path.join(folder_name, 'main.txt')
-            with open(file_path, 'w', encoding='utf-8') as file:
-                file.write('Это мой файл в новой папке.')
-            tk_msg.showinfo("Project Created", f"Project '{proj_name}' created successfully!", parent=root)
+            proj_width = tk_dial.askinteger('Enter your project width', 'Enter your project width:', parent=root)
+            if proj_width:
+                proj_height = tk_dial.askinteger('Enter your project height', 'Enter your project height:', parent=root)
+                if proj_height:
+                    os.makedirs(folder_name)
+                    main_file_path = os.path.join(folder_name, 'main.py')
+                    game_file_path = os.path.join(folder_name, 'game.py')
+                    game_code = textwrap.dedent(f"""
+                    import pygame
+                    import sys
+
+                    pygame.init()
+
+                    width = {proj_width}
+                    height = {proj_height}
+                    screen = pygame.display.set_mode((width, height))
+                    pygame.display.set_caption("{proj_name}")
+
+                    running = True
+                    while running:
+                        for event in pygame.event.get():
+                            if event.type == pygame.QUIT:
+                                running = False
+
+                        pygame.display.flip()
+
+                    pygame.quit()
+                    sys.exit()
+                    """)
+
+                    main_code = textwrap.dedent(f"""
+                    import tkinter as tk
+                    import os
+
+                    # создание окна
+                    root = tk.Tk()
+                    
+                    screen_width = root.winfo_screenwidth()
+                    screen_height = root.winfo_screenheight()
+                    
+                    x = (screen_width // 2) - (600 // 2)
+                    y = (screen_height // 2) - (600 // 2)
+                    
+                    # цвета
+                    color = '#808080'
+                    color2 = '#606060'
+                    
+                    folder_name = f'AntProj_{proj_name}'
+                    game_file_path = os.path.join(folder_name, 'game.py')
+                    with open(game_file_path, 'r', encoding='utf-8') as file:
+                        game_code = file.read()
+                    
+                    # настройки окна
+                    root.geometry(f'600x600+{{x}}+{{y}}')
+                    root.resizable(width=False, height=False)
+                    root.title(f'Ant Engine: {proj_name}')
+                    root['bg'] = color
+                    
+                    text_box = tk.Text(root, width=500, height=500)
+                    text_box.pack(padx=50, pady=50)
+                    
+                    text_box.insert(tk.END, game_code)
+                    
+                    root.mainloop()
+                    """)
+
+                    with open(main_file_path, 'w', encoding='utf-8') as file:
+                        file.write(main_code)
+                    with open(game_file_path, 'w', encoding='utf-8') as file:
+                        file.write(game_code)
+                    tk_msg.showinfo("Project Created", f"Project '{proj_name}' created successfully!", parent=root)
+
+                    update_folders()
         else:
             tk_msg.showerror("ERROR", "A project with this name already exists!", parent=root)
 
-btn_new = tkk.Button(frame, text='New', style='TButton', command=new_proj)
+btn_new = ttk.Button(frame, text='New', style='TButton', command=new_proj)
 btn_new.place(x=125, y=150, anchor='center')
+
+# cписок папок
+def open_proj(event):
+    selection = listbox.curselection()
+    if selection:
+        project_name = listbox.get(selection[0])
+        folder_name = f'AntProj_{project_name}'
+        file_path = os.path.join(folder_name, 'main.py')
+
+        if os.path.exists(file_path):
+            subprocess.Popen(['python', file_path])
+            root.destroy()
+        else:
+            tk_msg.showerror("ERROR", "File 'main.py' does not exist!", parent=root)
+
+folders_text = tk.Label(frame, text="Your Projects", font=tkfont, bg=color2)
+folders_text.place(relx=0.2, y=225, anchor='n')
+
+listbox = tk.Listbox(frame, width=25, height=10, font=('Arial', 16))
+listbox.place(relx=0.2, y=275, anchor='n')
+
+listbox.bind('<Double-Button-1>', open_proj)
+
+update_folders()
 
 # запуск программы
 root.mainloop()
