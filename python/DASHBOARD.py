@@ -41,6 +41,9 @@ def update_folders():
 
 def new():
 
+    import ENGINE
+    DASHBOARD.destroy()
+
     proj_name = tk_dial.askstring('Enter your project name', 'Enter your project name:', parent=DASHBOARD)
     if proj_name is not None and proj_name.strip():
         folder_name = f'mhle_{proj_name}'
@@ -51,8 +54,7 @@ def new():
                 file.write("Create with MISTIC_HAMMER")
             tk_msg.showinfo("Project created, now open engine", f"Project '{proj_name}' created successfully!", parent=DASHBOARD)
 
-            # import ENGINE
-            # DASHBOARD.destroy()
+            
         else:
             tk_msg.showerror("ERROR", "A project with this name already exists!", parent=DASHBOARD)
 
