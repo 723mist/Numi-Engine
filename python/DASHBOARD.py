@@ -2,6 +2,9 @@ import pylibary
 from pylibary import *
 import functions.centerWindow
 from functions.centerWindow import *
+import subprocess
+import Engine.Engine
+from Engine.Engine import *
 
 color = '#808080'
 color2 = '#606060'
@@ -24,7 +27,7 @@ style.configure('TButton', font=tkfont)
 frame = tk.Frame(DASHBOARD, bg=color)
 frame.place(relwidth=1, relheight=1)    
 
-# все папки, которые начинаются на "AntProj_"
+# все папки, которые начинаются на "mhle_"
 def update_folders():
     current_directory = os.path.dirname(os.path.abspath(__file__))
     folders = [folder for folder in os.listdir(current_directory) if os.path.isdir(os.path.join(current_directory, folder))]
@@ -36,10 +39,8 @@ def update_folders():
         display_name = folder.replace('mhle_', '', 1)
         listbox.insert(tk.END, display_name)
 
-
 def new():
-
-    import python.Engine.Engine as Engine
+    Engine.Engine.engine_start()
     DASHBOARD.destroy()
 
     proj_name = tk_dial.askstring('Enter your project name', 'Enter your project name:', parent=DASHBOARD)
@@ -51,8 +52,6 @@ def new():
             with open(file_path, 'w', encoding='utf-8') as file:
                 file.write("Create with MISTIC_HAMMER")
             tk_msg.showinfo("Project created, now open engine", f"Project '{proj_name}' created successfully!", parent=DASHBOARD)
-
-            
         else:
             tk_msg.showerror("ERROR", "A project with this name already exists!", parent=DASHBOARD)
 
@@ -65,10 +64,7 @@ listbox.place(relx=0.2, y=275, anchor='n')
 
 update_folders()
 
-
-
 button = ttk.Button(text="New", command=new)
 button.place(relx=0.90365, rely=0.01, anchor=NW)
 
 DASHBOARD.mainloop()
-
