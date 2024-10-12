@@ -3,8 +3,6 @@ from pylibary import *
 import functions.centerWindow
 from functions.centerWindow import *
 import subprocess
-import Engine.Engine
-from Engine.Engine import *
 
 color = '#808080'
 color2 = '#606060'
@@ -40,7 +38,7 @@ def update_folders():
         listbox.insert(tk.END, display_name)
 
 def new():
-    Engine.Engine.engine_start()
+    import Engine.Engine
     DASHBOARD.destroy()
 
     proj_name = tk_dial.askstring('Enter your project name', 'Enter your project name:', parent=DASHBOARD)
