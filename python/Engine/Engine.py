@@ -1,13 +1,15 @@
 from tkinter import *
 from tkinter import filedialog as fd
-
+from tkinter import ttk
+import time
 
 def ofd():
-        print("ofd = Open file dialog")
-        filename = fd.askopenfilename()
+    print("ofd = Open file dialog")
+    filename = fd.askopenfilename()
 
 def exit():
     print("Exit")
+    import save
     editor_hammer.destroy()
 
 def config():
@@ -31,7 +33,7 @@ editor_hammer.geometry("1208x640")
 editor_hammer.option_add("*tearOff", FALSE)
 editor_hammer.config(bg=color)
 #editor_hammer.resizable(width=False, height=False)
-    
+
 toolBarEditor = Menu()
 
 tools_in_toolbar_options = Menu()

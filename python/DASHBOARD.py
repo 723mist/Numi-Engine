@@ -1,68 +1,62 @@
 import pylibary
 from pylibary import *
+import tkinter as tk
 import functions.centerWindow
 from functions.centerWindow import *
 import subprocess
+from tkinter import filedialog
+from tkinter.filedialog import asksaveasfile
+from tkinter import messagebox
 
-color = '#808080'
-color2 = '#606060'
+# Цвета
+color = '#2d333d'
+color2 = '#48688a'
+color3 = '#8787a5'
 
-DASHBOARD = Tk()
-DASHBOARD.title("Py.name.MISTIC_HAMMER")
-DASHBOARD.geometry("602x598")
-DASHBOARD.config(bg="gray")
-DASHBOARD.resizable(False, False)
-DASHBOARD['bg'] = color
-center_window(DASHBOARD)
+Dashboard = Tk()
+Dashboard.title("Py.name.MISTIC_HAMMER")
+Dashboard.geometry("602x598")
+Dashboard.config(bg="gray")
+Dashboard.resizable(False, False)
+Dashboard['bg'] = color
+center_window(Dashboard)
 
-tkfont = ('Arial', 24)
+# Шрифт
+tkfont = ('Poppins', 24)
 
-# стили
+# Стили
 style = tkk.Style()
-style.configure('TButton', font=tkfont)
+style.configure('Button', font=tkfont)
 
-# создание фрейма (на нем легче все размещать)
-frame = tk.Frame(DASHBOARD, bg=color)
-frame.place(relwidth=1, relheight=1)    
+# Фрейм
+frame = tk.Frame(Dashboard, bg=color3)
+frame.place(relwidth=1, relheight=1)
 
-# все папки, которые начинаются на "mhle_"
-def update_folders():
-    current_directory = os.path.dirname(os.path.abspath(__file__))
-    folders = [folder for folder in os.listdir(current_directory) if os.path.isdir(os.path.join(current_directory, folder))]
-    filtered_folders = [folder for folder in folders if folder.startswith('mhle_')]
+def nsfld():
+    path_to_floder = filedialog.askdirectory(title="Create floder")
 
-    listbox.delete(0, tk.END)
+    if path_to_floder:
+        defult_name_floder = "newProject" #<===== ЗАМЕНИТЬ!!!
+        new_floder_path = os.path.join(path_to_floder, defult_name_floder)
 
-    for folder in filtered_folders:
-        display_name = folder.replace('mhle_', '', 1)
-        listbox.insert(tk.END, display_name)
+        try:
+            os.makedirs(new_floder_path)
+            messagebox.showinfo("Успех", f"Папка '{defult_name_floder}' успешно создана!")
+        except FileExistsError:
+            messagebox.showwarning("Ошибка", "Такая папка уже существует!")
+        except Exception as e:
+            messagebox.showerror("Ошибка", f"Не удалось создать папку: {e}")
 
-def new():
-    import Engine.Engine
-    DASHBOARD.destroy()
+    save_floder = "none" 
 
-    proj_name = tk_dial.askstring('Enter your project name', 'Enter your project name:', parent=DASHBOARD)
-    if proj_name is not None and proj_name.strip():
-        folder_name = f'mhle_{proj_name}'
-        if not os.path.exists(folder_name):
-            os.makedirs(folder_name)
-            file_path = os.path.join(folder_name, 'settings.spmh')
-            with open(file_path, 'w', encoding='utf-8') as file:
-                file.write("Create with MISTIC_HAMMER")
-            tk_msg.showinfo("Project created, now open engine", f"Project '{proj_name}' created successfully!", parent=DASHBOARD)
-        else:
-            tk_msg.showerror("ERROR", "A project with this name already exists!", parent=DASHBOARD)
+def nsfd():
+    print("sfd")
+    path_to_file = filedialog.askopenfilename(title="Open", filetypes=[("MHP", ".mhp")])
 
+def NBCreate():
+    nsfld()
 
-folders_text = tk.Label(frame, text="Your Projects", font=tkfont, bg=color2)
-folders_text.place(relx=0.2, y=225, anchor='n')
+NB = Button(text="New", command=NBCreate)
+NB.place(x=525,y=30)
 
-listbox = tk.Listbox(frame, width=25, height=10, font=('Arial', 16))
-listbox.place(relx=0.2, y=275, anchor='n')
-
-update_folders()
-
-button = ttk.Button(text="New", command=new)
-button.place(relx=0.90365, rely=0.01, anchor=NW)
-
-DASHBOARD.mainloop()
+Dashboard.mainloop()
