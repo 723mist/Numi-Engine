@@ -32,16 +32,19 @@ style.configure('Button', font=tkfont)
 frame = tk.Frame(Dashboard, bg=color3)
 frame.place(relwidth=1, relheight=1)
 
+def new_prj_set():
+    import new_settings_project
+
 def nsfld():
+    defult_name_floder = tk_dial.askstring("Enter name", "Project name" , parent=Dashboard)
     path_to_floder = filedialog.askdirectory(title="Create floder")
 
     if path_to_floder:
-        defult_name_floder = "newProject" #<===== ЗАМЕНИТЬ!!!
         new_floder_path = os.path.join(path_to_floder, defult_name_floder)
-
         try:
             os.makedirs(new_floder_path)
             messagebox.showinfo("Успех", f"Папка '{defult_name_floder}' успешно создана!")
+            new_prj_set()
         except FileExistsError:
             messagebox.showwarning("Ошибка", "Такая папка уже существует!")
         except Exception as e:
