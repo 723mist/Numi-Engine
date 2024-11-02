@@ -1,0 +1,15 @@
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\bin\Debug\MISTIC_HAMMER.exe.config
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\bin\Debug\MISTIC_HAMMER.exe
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\bin\Debug\MISTIC_HAMMER.pdb
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MISTIC_HAMMER.csproj.AssemblyReference.cache
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MainWindow.g.cs
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\App.g.cs
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MISTIC_HAMMER_MarkupCompile.cache
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MISTIC_HAMMER_MarkupCompile.lref
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MainWindow.baml
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MISTIC_HAMMER.g.resources
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MISTIC_HAMMER.Properties.Resources.resources
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MISTIC_HAMMER.csproj.GenerateResource.cache
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MISTIC_HAMMER.csproj.CoreCompileInputs.cache
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MISTIC_HAMMER.exe
+C:\Users\MIST\source\repos\MISTIC_HAMMER\MISTIC_HAMMER\obj\Debug\MISTIC_HAMMER.pdb

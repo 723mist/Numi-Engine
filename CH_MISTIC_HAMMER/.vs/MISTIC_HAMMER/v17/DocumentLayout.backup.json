@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MIST\\source\\repos\\MISTIC_HAMMER\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8B3D2E4E-7D7F-4BE4-B407-AE2296F8E9CC}|MISTIC_HAMMER\\MISTIC_HAMMER.csproj|c:\\users\\mist\\source\\repos\\mistic_hammer\\mistic_hammer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{8B3D2E4E-7D7F-4BE4-B407-AE2296F8E9CC}|MISTIC_HAMMER\\MISTIC_HAMMER.csproj|solutionrelative:mistic_hammer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B3D2E4E-7D7F-4BE4-B407-AE2296F8E9CC}|MISTIC_HAMMER\\MISTIC_HAMMER.csproj|C:\\Users\\MIST\\source\\repos\\MISTIC_HAMMER\\mistic_hammer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B3D2E4E-7D7F-4BE4-B407-AE2296F8E9CC}|MISTIC_HAMMER\\MISTIC_HAMMER.csproj|solutionrelative:mistic_hammer\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 224,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\MIST\\source\\repos\\MISTIC_HAMMER\\MISTIC_HAMMER\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MISTIC_HAMMER\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\MIST\\source\\repos\\MISTIC_HAMMER\\MISTIC_HAMMER\\MainWindow.xaml*",
+              "RelativeToolTip": "MISTIC_HAMMER\\MainWindow.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-20T18:28:32.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\MIST\\source\\repos\\MISTIC_HAMMER\\MISTIC_HAMMER\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MISTIC_HAMMER\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\MIST\\source\\repos\\MISTIC_HAMMER\\MISTIC_HAMMER\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MISTIC_HAMMER\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T18:28:30.247Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

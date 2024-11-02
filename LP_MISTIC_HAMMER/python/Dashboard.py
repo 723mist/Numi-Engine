@@ -26,17 +26,19 @@ tkfont = ('Poppins', 24)
 
 # Стили
 style = tkk.Style()
-style.configure('Button', font=tkfont)
+style.configure("MH.Button")
 
 # Фрейм
 frame = tk.Frame(Dashboard, bg=color3)
 frame.place(relwidth=1, relheight=1)
 
+# Функцыя
 def new_prj_set():
     import new_settings_project
 
-def nsfld():
-    defult_name_floder = tk_dial.askstring("Enter name", "Project name" , parent=Dashboard)
+# Функцыя
+def nsfldd():   
+    defult_name_floder = tk_dial.askstring("Name", "Project name" , parent=Dashboard)
     path_to_floder = filedialog.askdirectory(title="Create floder")
 
     if path_to_floder:
@@ -44,7 +46,7 @@ def nsfld():
         try:
             os.makedirs(new_floder_path)
             messagebox.showinfo("Успех", f"Папка '{defult_name_floder}' успешно создана!")
-            new_prj_set()
+            import new_settings_project
         except FileExistsError:
             messagebox.showwarning("Ошибка", "Такая папка уже существует!")
         except Exception as e:
@@ -52,13 +54,16 @@ def nsfld():
 
     save_floder = "none" 
 
-def nsfd():
+# Функцыя
+def osfd():
     print("sfd")
     path_to_file = filedialog.askopenfilename(title="Open", filetypes=[("MHP", ".mhp")])
 
+# Функцыя
 def NBCreate():
-    nsfld()
+    nsfldd()
 
+# Кнопка New
 NB = Button(text="New", command=NBCreate)
 NB.place(x=525,y=30)
 

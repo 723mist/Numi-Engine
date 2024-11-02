@@ -40,12 +40,12 @@ tools_in_toolbar_options = Menu()
 
 tools_in_toolbar = Menu()
 tools_in_toolbar.add_command(label="New")
-tools_in_toolbar.add_cascade(label="Open", command=ofd)
+tools_in_toolbar.add_command(label="Open", command=ofd)
 tools_in_toolbar.add_command(label="Save")
 # tools_in_toolbar.add_cascade(label="Options", menu= tools_in_toolbar_options)
 tools_in_toolbar.add_separator()
-tools_in_toolbar.add_cascade(label="Open deshboard", command=opendashboard)
-tools_in_toolbar.add_cascade(label="Exit", command=exit)
+tools_in_toolbar.add_command(label="Open deshboard", command=opendashboard)
+tools_in_toolbar.add_command(label="Exit", command=exit)
 
 
 tool_bar_edit =Menu(toolBarEditor, tearoff=0)
