@@ -1,5 +1,7 @@
 EN:
 
+When starting the engine, run the file with the name "manager.py "
+
 WARNING! The engine is not finished, but how:
 1. WE ARE LAYING THE FOUNDATION FOR THE FUTURE 
 2. Work is underway on the interface
@@ -17,6 +19,8 @@ import sys
 If you get an error saying that the engine is not supported on your OS, then do not be afraid this is a blank for the future if the engine does not work on certain platforms
 
 RU:
+
+При запуске движка запускайте файл с названием "manager.py"
 
 ПРЕДУПРЕЖДЕНИЕ! Движок не доделан так а как:
 1. МЫ ЗАКЛАДЫВАЕМ ФУНДАМЕНТ НА БУДУЩЕЕ 
