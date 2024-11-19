@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient2"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#c5e1ae;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+      <stop
+         style="stop-color:#507c7f;stop-opacity:1;"
+         offset="1"
+         id="stop3" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2"
+       id="linearGradient3"
+       x1="-5.1718721"
+       y1="256.05441"
+       x2="521.73383"
+       y2="256.05441"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter3"
+       x="-0.10492173"
+       y="-0.10510108"
+       width="1.2098435"
+       height="1.2102022">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="22.816352"
+         id="feGaussianBlur3" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="display:inline;opacity:1;fill:url(#linearGradient3);stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke;filter:url(#filter3)"
+       id="rect1"
+       width="521.9057"
+       height="521.01508"
+       x="-2.6718721"
+       y="-4.4531202"
+       transform="matrix(-1.0692054,1.2590893,-1.2983675,-1.0368598,835.45815,196.8675)" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:135.881px;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS Bold';opacity:1;fill:#1a1a1a;stroke:none;stroke-width:56.6172;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       x="34.314373"
+       y="157.52689"
+       id="text3"
+       transform="matrix(1.0119661,-0.20483509,0.16419086,0.95494104,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         x="34.314373"
+         y="157.52689"
+         style="fill:#1a1a1a;stroke-width:56.6172">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:135.141px;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS Bold';opacity:1;fill:#1a1a1a;stroke:none;stroke-width:56.3088;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       x="204.27588"
+       y="243.04797"
+       id="text4"
+       transform="matrix(0.96076478,0.21511104,-0.18743784,0.99887097,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         x="204.27588"
+         y="243.04797"
+         style="stroke-width:56.3088">OR</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:175.737px;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS Bold';opacity:1;fill:#1a1a1a;stroke:none;stroke-width:73.2241;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       x="480.36819"
+       y="373.8324"
+       id="text5"
+       transform="matrix(0.92656158,0.17910317,-0.20110522,1.0403857,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         x="480.36819"
+         y="373.8324"
+         style="stroke-width:73.2241">2</tspan></text>
+  </g>
+</svg>
