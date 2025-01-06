@@ -8,9 +8,21 @@ import time
 import webbrowser
 
 # Сolors
-color1 = "#252426"
-color2 = "#312f33"
+color1 = "#252426" #Color1
+color2 = "#312f33" #Color2
+color3 = "#004D40" #Foreground
+color4 = "#B2DFDB" #Background
 
+#Font
+font1 = "helvetica 14"
+
+#ttk.Style().configure("UpBar", font=font1, foreground=color3, padding=10, background=color4)
+
+#Style
+#upBarStyle = ttk.Style().configure("UpBar", font=font1, foreground=color3, padding=10, background=color4)
+#upBarStyle.configure("UpBar", font=font1, foreground=color3, padding=10, background=color4)
+
+#Engine name plus prj name
 global_prj_name_file = "Test"
 global_p_name = f"{" project: "}{global_prj_name_file}"
 
@@ -83,7 +95,7 @@ def Config():
     w_config.geometry("600x250")
     w_config.title("Config")
 
-    bc_test = ttk.Button(w_config, text="test button")
+    bc_test = ttk.Button(w_config, text="test button", style="Style")
     bc_test.place(x=100, y=100)
 
     w_config.config(bg=color1)
