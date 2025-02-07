@@ -8,21 +8,9 @@ import time
 import webbrowser
 
 # Сolors
-color1 = "#252426" #Color1
-color2 = "#312f33" #Color2
-color3 = "#004D40" #Foreground
-color4 = "#B2DFDB" #Background
+color1 = "#252426"
+color2 = "#312f33"
 
-#Font
-font1 = "helvetica 14"
-
-#ttk.Style().configure("UpBar", font=font1, foreground=color3, padding=10, background=color4)
-
-#Style
-#upBarStyle = ttk.Style().configure("UpBar", font=font1, foreground=color3, padding=10, background=color4)
-#upBarStyle.configure("UpBar", font=font1, foreground=color3, padding=10, background=color4)
-
-#Engine name plus prj name
 global_prj_name_file = "Test"
 global_p_name = f"{" project: "}{global_prj_name_file}"
 
@@ -30,6 +18,12 @@ global_p_name = f"{" project: "}{global_prj_name_file}"
 wengine = Tk()
 wengine.title(f"Engine {global_p_name}")
 wengine.geometry("1024x600")
+
+close = ttk.Button(wengine, text="Close")
+close.place(x=100, y=100)
+
+Git = ttk.Button(wengine, text="GitHub", command=lambda:webbrowser.open("https://github.com/723mist/Numi-Engine"))
+Git.place(x=100, y=200)
 
 #Functions
 
@@ -76,6 +70,18 @@ def Reload():
 def Engine_floder():
     print("._.")
 
+#Extensions manager
+def Extensions_manager():
+    print("Extensions manager")
+
+    exMan = Tk()
+    exMan.title("Extensions manager")
+    exMan.geometry("600x600")
+
+    #Добавить сайт с плагинами плюс минус по ссылке https://www.numiEngine_ExtensionsStore.com
+
+    exMan.mainloop()
+
 #Project configuration
 def Tool_prj_config():
     print("Prj conf")
@@ -95,7 +101,7 @@ def Config():
     w_config.geometry("600x250")
     w_config.title("Config")
 
-    bc_test = ttk.Button(w_config, text="test button", style="Style")
+    bc_test = ttk.Button(w_config, text="test button")
     bc_test.place(x=100, y=100)
 
     w_config.config(bg=color1)
@@ -156,8 +162,8 @@ File.add_cascade(label="Recent projects", menu=recent_prj)
 File.add_command(label="Save", command=lambda:Save())
 File.add_command(label="Save as", command=lambda:SaveAs())
 File.add_separator()
-File.add_command(label="Reload", command=lambda:Reload())
-File.add_command(label="Exit", command=lambda:Exit())
+File.add_command(label="Reload(Work)", command=lambda:Reload())
+File.add_command(label="Exit(Work)", command=lambda:Exit())
 
 #MenuRecent
 recent_prj.add_command(label="Test func 'Recent Projects 1'")
@@ -168,9 +174,10 @@ recent_prj.add_command(label="Test func 'Recent Projects 3'")
 
 #MenuEngine
 Engine.add_command(label="Engine floder", command=lambda:Engine_floder())
+Engine.add_command(label="Extensions manager", command=lambda:Extensions_manager)
 #Engine.add_command(label="Engine documentation")
 Engine.add_separator()
-#Engine.add_command(label="tearoff to 1", command=lambda:)
+#Engine.add_command(label="tearoff to 1", command=lambda:TerOff())
 Engine.add_command(label="Config(Work)", command=lambda:Config())
 
 #MenuEdit
@@ -198,13 +205,10 @@ Build.add_command(label="Build and run(Not working (under development))")
 Help.add_command(label="Wiki/Documentation", command=lambda:Wiki())
 Help.add_command(label="Help")
 Help.add_separator()
-Help.add_command(label="Bug report!", command=lambda:BugReport())
+Help.add_command(label="Bug report!(Work)", command=lambda:BugReport())
 
 #Interface
 g_PanedWindow_Type_Horizontal = PanedWindow(orient ="horizontal")
-
-label_ver = Label(text="Attention the engine is in an early stage. If you want to help or support, we are waiting for you on GitHub!")
-label_ver.place(x=10, y=10)
 
 #bt = ttk.Button(text="Test")
 #bt.place(x=40, y=40)
